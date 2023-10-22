@@ -7,9 +7,6 @@ const express = require("express");
 //routes
 
 
-//jwt
-// const jwt = require('jsonwebtoken');
-
 //start the server
 const app = express();
 
