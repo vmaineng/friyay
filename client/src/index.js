@@ -9,7 +9,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   textStyles: {
-    fontFamily: 'Annie Use Your Telescope',
+    fontFamily: `'Fraunces', 'sans-serif'`,
   }
 })
 
