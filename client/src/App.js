@@ -1,6 +1,6 @@
 import './App.css';
 import { Video } from './components/Video';
-import  Footer from './components/Footer';
+import { Footer }from './components/Footer';
 
 function App() {
   return (
