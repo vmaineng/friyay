@@ -28,9 +28,9 @@ export const Navbar = () => {
   const linkHoverColor = useColorModeValue('gray.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
-  const NAV_ITEMS: Array<NavItem> = [
+  const NAV_ITEMS = [
     {
-      label: 'Inspiration',
+      label: 'Home',
       children: [
         {
           label: 'Explore Design Work',
@@ -45,7 +45,7 @@ export const Navbar = () => {
       ],
     },
     {
-      label: 'Find Work',
+      label: 'New & Popular',
       children: [
         {
           label: 'Job Board',
@@ -60,11 +60,11 @@ export const Navbar = () => {
       ],
     },
     {
-      label: 'Learn Design',
+      label: 'Movie',
       href: '#',
     },
     {
-      label: 'Hire Designers',
+      label: 'My List',
       href: '#',
     },
   ]
@@ -84,7 +84,7 @@ export const Navbar = () => {
           borderColor={useColorModeValue("gray.200", "gray.900")}
           align={"center"}
         >
-          Navigation
+          
           <Stack direction={'row'} spacing={4}>
           {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
