@@ -12,7 +12,6 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 export const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <div>
-      DesktopSubNav
       <Box
         as="a"
         href={href}
