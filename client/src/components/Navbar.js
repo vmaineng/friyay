@@ -14,6 +14,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { DesktopSubNav } from "./DesktopSubNav";
 // import {
 //   HamburgerIcon,
 //   CloseIcon,
@@ -33,12 +34,12 @@ export const Navbar = () => {
       label: 'Home',
       children: [
         {
-          label: 'Explore Design Work',
+          label: 'TV Genres',
           subLabel: 'Trending Design to inspire you',
           href: '#',
         },
         {
-          label: 'New & Noteworthy',
+          label: 'Movie',
           subLabel: 'Up-and-coming Designers',
           href: '#',
         },
@@ -48,12 +49,12 @@ export const Navbar = () => {
       label: 'New & Popular',
       children: [
         {
-          label: 'Job Board',
+          label: 'Documentaries',
           subLabel: 'Find your dream design job',
           href: '#',
         },
         {
-          label: 'Freelance Projects',
+          label: 'International',
           subLabel: 'An exclusive list for contract work',
           href: '#',
         },
@@ -113,11 +114,11 @@ export const Navbar = () => {
                 p={4}
                 rounded={'xl'}
                 minW={'sm'}>
-                {/* <Stack>
+                <Stack>
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
-                </Stack> */}
+                </Stack>
               </PopoverContent>
             )}
           </Popover>
@@ -132,7 +133,7 @@ export const Navbar = () => {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            {/* Logo */}
           </Text>
         </Flex>
 
