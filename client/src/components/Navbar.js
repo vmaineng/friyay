@@ -20,56 +20,55 @@ import {
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
-} from '@chakra-ui/icons'
+} from "@chakra-ui/icons";
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
-  const linkColor = useColorModeValue('gray.600', 'gray.200')
-  const linkHoverColor = useColorModeValue('gray.800', 'white')
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800')
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   const NAV_ITEMS = [
     {
-      label: 'Home',
+      label: "Home",
       children: [
         {
-          label: 'TV Genres',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
+          label: "TV Genres",
+          subLabel: "Find a genre you'd like",
+          href: "#",
         },
         {
-          label: 'Movie',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
+          label: "Movie",
+          subLabel: "Up-and-coming",
+          href: "#",
         },
       ],
     },
     {
-      label: 'New & Popular',
+      label: "New & Popular",
       children: [
         {
-          label: 'Documentaries',
-          subLabel: 'Find your dream design job',
-          href: '#',
+          label: "Documentaries",
+          subLabel: "Figure out where to go next",
+          href: "#",
         },
         {
-          label: 'International',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
+          label: "International",
+          subLabel: "Let's travel",
+          href: "#",
         },
       ],
     },
     {
-      label: 'Movie',
-      href: '#',
+      label: "Movie",
+      href: "#",
     },
     {
-      label: 'My List',
-      href: '#',
+      label: "My List",
+      href: "#",
     },
-  ]
-  
+  ];
 
   return (
     <div>
@@ -85,93 +84,107 @@ export const Navbar = () => {
           borderColor={useColorModeValue("gray.200", "gray.900")}
           align={"center"}
         >
-            <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}>
-          <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
-          
-          <Stack direction={'row'} spacing={4}>
-          {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Box
-                as="a"
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}>
-                {navItem.label}
-              </Box>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-
-            </Stack>
-
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+          <Flex
+            flex={{ base: 1, md: "auto" }}
+            ml={{ base: -2 }}
+            display={{ base: "flex", md: "none" }}
           >
-            {/* Logo */}
-          </Text>
-        </Flex>
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Toggle Navigation"}
+            />
+          </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            as={'a'}
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
-          </Button>
-        </Stack>
-      
-    
+          <Stack direction={"row"} spacing={4}>
+            {NAV_ITEMS.map((navItem) => (
+              <Box key={navItem.label}>
+                <Popover trigger={"hover"} placement={"bottom-start"}>
+                  <PopoverTrigger>
+                    <Box
+                      as="a"
+                      p={2}
+                      href={navItem.href ?? "#"}
+                      fontSize={"sm"}
+                      fontWeight={500}
+                      color={linkColor}
+                      _hover={{
+                        textDecoration: "none",
+                        color: linkHoverColor,
+                      }}
+                    >
+                      {navItem.label}
+                    </Box>
+                  </PopoverTrigger>
+
+                  {navItem.children && (
+                    <PopoverContent
+                      border={0}
+                      boxShadow={"xl"}
+                      bg={popoverContentBgColor}
+                      p={4}
+                      rounded={"xl"}
+                      minW={"sm"}
+                    >
+                      <Stack>
+                        {navItem.children.map((child) => (
+                          <DesktopSubNav key={child.label} {...child} />
+                        ))}
+                      </Stack>
+                    </PopoverContent>
+                  )}
+                </Popover>
+              </Box>
+            ))}
+          </Stack>
+
+          <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              {/* Logo */}
+            </Text>
+          </Flex>
+
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={6}
+          >
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+            >
+              Sign In
+            </Button>
+            <Button
+              as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"pink.400"}
+              href={"#"}
+              _hover={{
+                bg: "pink.300",
+              }}
+            >
+              Sign Up
+            </Button>
+          </Stack>
         </Flex>
       </Box>
     </div>
