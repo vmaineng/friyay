@@ -17,10 +17,10 @@ import {
 // } from "chakra-framer-carousel";
 
 export const Video = () => {
-  const images = [
-    "https://www.youtube.com/embed/QhBnZ6NPOY0",
-    "https://www.youtube.com/embed/QhBnZ6NPOY0",
-  ];
+  // const images = [
+  //   "https://www.youtube.com/embed/QhBnZ6NPOY0",
+  //   "https://www.youtube.com/embed/QhBnZ6NPOY0",
+  // ];
 
   return (
     <div>
@@ -33,30 +33,7 @@ export const Video = () => {
           direction={{ base: "column" }}
           spacing={{ base: 10, md: 4, lg: 10 }}
         >
-          <Card
-            bg={useColorModeValue("white", "gray.800")}
-            boxShadow={"lg"}
-            p={8}
-            rounded={"xl"}
-            align={"center"}
-            pos={"relative"}
-            _after={{
-              content: `""`,
-              w: 0,
-              h: 0,
-              borderLeft: "solid transparent",
-              borderLeftWidth: 16,
-              borderRight: "solid transparent",
-              borderRightWidth: 16,
-              borderTop: "solid",
-              borderTopWidth: 16,
-              borderTopColor: useColorModeValue("white", "gray.800"),
-              pos: "absolute",
-              bottom: "-16px",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          >
+          <Card>
             {/* Heading for the title */}
             <Heading as={"h3"} fontSize={"xl"}>
               Naruto
@@ -69,6 +46,9 @@ export const Video = () => {
             >
               Anime
             </Text>
+          </Card>
+
+          {/* {/* <Card>
             <AspectRatio maxW="560px" ratio={1}>
               <iframe
                 title="naruto"
@@ -76,7 +56,7 @@ export const Video = () => {
                 allowFullScreen
               />
             </AspectRatio>
-          </Card>
+          </Card> */}
 
           <Card>
             <AspectRatio maxW="560px" ratio={1}>
@@ -88,18 +68,6 @@ export const Video = () => {
             </AspectRatio>
           </Card>
         </Stack>
-
-        <Card maxW="sm">
-          <CardBody>
-            <AspectRatio maxW="560px" ratio={1}>
-              <iframe
-                title="naruto"
-                src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-                allowFullScreen
-              />
-            </AspectRatio>
-          </CardBody>
-        </Card>
 
         {/* <Carousel>
       <CarouselItems>
