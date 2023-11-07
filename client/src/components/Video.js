@@ -1,9 +1,13 @@
 import { AspectRatio, Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
-import Carousel from "framer-motion-carousel";
+// import {
+//   Carousel,
+//   CarouselItem,
+//   CarouselItems,
+// } from "chakra-framer-carousel";
 
 export const Video = () => {
   
-  const colors = ["#f90", "#ef0", "#e0f"];
+  const images = ["https://www.youtube.com/embed/QhBnZ6NPOY0", "https://www.youtube.com/embed/QhBnZ6NPOY0"];
 
   return (
     <div>
@@ -31,17 +35,18 @@ export const Video = () => {
         </CardBody>
       </Card>
 
-      <Carousel>
-      {[1, 2, 3, 4].map((item, i) => (
-      <img
-        draggable="false"
-        src={`./${item}.jpg`}
-        key={i}
-        width="100%"
-        alt=""
-      />
-    ))}
-      </Carousel>
+      {/* <Carousel>
+      <CarouselItems>
+        {images.map((image, index) => {
+          return (
+            <CarouselItem index={index} key={image}>
+              <Card index={index} image={image} />
+            </CarouselItem>
+          );
+        })}
+      </CarouselItems> */}
+      {/* <Toolbar /> */}
+      {/* </Carousel> */}
     </div>
   )
 }
