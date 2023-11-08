@@ -6,9 +6,6 @@ import {
   Heading,
   Text,
   Stack,
-  HStack,
-  CardBody,
-  CardFooter,
   useColorModeValue,
 } from "@chakra-ui/react";
 // import {

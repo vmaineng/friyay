@@ -15,9 +15,9 @@ const entertainmentSchema = new Schema({
         type: String, 
         unique: false,
         enum: [
-            "Health",
-            "Wealth",
-            "Self-love"
+            "Anime",
+            "Documentaries",
+            "International"
         ]
     },
     // completed: {
@@ -26,4 +26,4 @@ const entertainmentSchema = new Schema({
     // }
 }, {timestamps: true})
 
-module.exports = mongoose.model('Habit', habitSchema)
+module.exports = mongoose.model('Entertainment', entertainmentSchema)
