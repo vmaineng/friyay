@@ -58,14 +58,15 @@ export const Video = () => {
             </AspectRatio>
           </Card> */}
 
-          <Card>
-            <AspectRatio maxW="560px" ratio={1}>
+          <Card maxW='sm'> 
+            <AspectRatio maxW="560px" ratio={4/3}>
               <iframe
                 title="naruto"
                 src="https://www.youtube.com/embed/QhBnZ6NPOY0"
                 allowFullScreen
               />
             </AspectRatio>
+            
           </Card>
         </Stack>
 
