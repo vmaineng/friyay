@@ -6,6 +6,7 @@ import {
   Heading,
   Text,
   Stack,
+  HStack,
   CardBody,
   CardFooter,
   useColorModeValue,
@@ -24,13 +25,13 @@ export const Video = () => {
 
   return (
     <div>
-      <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
+      <Container maxW={"md"} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={"center"}>
           <Heading>Our Clients Speak</Heading>
           <Text>We have been working with clients around the world</Text>
         </Stack>
         <Stack
-          direction={{ base: "column" }}
+          direction={{ base: "column"}}
           spacing={{ base: 10, md: 4, lg: 10 }}
         >
           <Card>
