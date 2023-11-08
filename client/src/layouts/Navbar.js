@@ -14,7 +14,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { DesktopSubNav } from "./DesktopSubNav";
+import { DesktopSubNav } from "../components/DesktopSubNav";
 import {
   HamburgerIcon,
   CloseIcon,
