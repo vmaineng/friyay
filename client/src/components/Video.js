@@ -15,7 +15,7 @@ import {
 //   CarouselItems,
 // } from "chakra-framer-carousel";
 
-export const Video = () => {
+export const Video = ( {video} ) => {
 
 
 
@@ -38,7 +38,8 @@ export const Video = () => {
           <Card>
             {/* Heading for the title */}
             <Heading as={"h3"} fontSize={"xl"}>
-              Naruto
+              Naruto 
+              {/* {video.title} */}
             </Heading>
             {/* Description */}
             <Text

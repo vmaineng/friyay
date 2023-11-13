@@ -7,7 +7,10 @@ const entertainmentSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
+    id: {
+        type: Integer,
+    },
+    posterPath: {
         type: String,
         required: true
     },
