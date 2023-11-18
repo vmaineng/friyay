@@ -4,7 +4,7 @@ const User = require('../models/User');
 const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.userId);
-        res.status(200).setHeader("Content-type", "application/json").json(oneUser);
+        res.status(200).setHeader("Content-type", "application/json").json(user);
       } catch (err) {
         res.status(404).send(`Can't get user data, ${err.message}`);
         next(err);

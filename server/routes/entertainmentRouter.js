@@ -1,17 +1,17 @@
 const express = require ("express");
 const Entertainment = require("../models/Entertainment");
-const { createEntertainment, getEntertainment, getEntertainments, deleteEntertainment, updateEntertainment} = require("../controllers/entertainmentController");
+const { getMovie } = require("../controllers/entertainmentController");
 
 const router = express.Router();
 
-router.get("/", getEntertainments);
+// router.get("/", getEntertainments);
 
-router.get("/:id", getEntertainment);
+router.get("/:id", getMovie);
 
-router.post("/", createEntertainment);
+// router.post("/", createEntertainment);
 
-router.delete("/:id", deleteEntertainment);
+// router.delete("/:id", deleteEntertainment);
 
-router.patch("/:id", updateEntertainment);
+// router.patch("/:id", updateEntertainment);
 
 module.exports = router;
