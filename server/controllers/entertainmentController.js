@@ -2,7 +2,10 @@ const express = require('express');
 const Entertainment = require('../models/Entertainment');
 
 const apiKey = process.env.API_KEY;
-const baseUrl = 'https://api.themoviedb.org/3/discover/movie';
+const baseUrl = 'https://api.themoviedb.org/3';
+const apiUrl = baseUrl + '/discover/movie?sort_by=popularity.desc&'+ apiKey;
+// const imgUrl = 
+const searchUrl = baseUrl + '/search/movie?' + apiKey;
 
 const getMovie = async (req, res, next) => {
     try {

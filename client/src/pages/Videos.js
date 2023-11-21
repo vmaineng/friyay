@@ -38,8 +38,9 @@ function updatedVideo(updatedVideo) {
 }
 
   return (
-    <div> {
-      movieDetails && movieDetails.map((video) => (
+    <div> 
+       {error && <p>{error}</p>}
+      {movieDetails && movieDetails.map((video) => (
         <Video 
         key = {video._id}
         video={video}

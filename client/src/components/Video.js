@@ -39,7 +39,7 @@ export const Video = ( {video} ) => {
             {/* Heading for the title */}
             <Heading as={"h3"} fontSize={"xl"}>
               Naruto 
-              {/* {video.title} */}
+              {video}
             </Heading>
             {/* Description */}
             <Text
