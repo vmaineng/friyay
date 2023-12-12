@@ -4,7 +4,7 @@ import { Video } from "../components/Video";
 
 
 export const Videos = () => {
-  const [movieDetails, setMovieDetails] = useState(null);
+  const [movieDetailsData, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export const Videos = () => {
       const results = movieDetailsData.results;
   
       console.log('Results:', results);
+      setMovieDetails(results)
 
     } catch (error) {
       console.error("Error", error);
@@ -32,28 +33,28 @@ export const Videos = () => {
     }
   }
 
-  function deleteVideo(id) {
-    const updatedVideos = movieDetails.filter((video) => video.id !== id);
-    setMovieDetails(updatedVideos);
-  }
+  // function deleteVideo(id) {
+  //   const updatedVideos = movieDetails.filter((video) => video.id !== id);
+  //   setMovieDetails(updatedVideos);
+  // }
 
-  function updatedVideo(updatedVideo) {
-    const updatedVideos = movieDetails.map((video) => {
-      return video.id === updatedVideo.id ? updatedVideo : video;
-    });
-    setMovieDetails(updatedVideos);
-  }
+  // function updatedVideo(updatedVideo) {
+  //   const updatedVideos = movieDetails.map((video) => {
+  //     return video.id === updatedVideo.id ? updatedVideo : video;
+  //   });
+  //   setMovieDetails(updatedVideos);
+  // }
 
   return (
     <div>
       {error && <p>{error}</p>}
-      {movieDetails &&
-        movieDetails.map((video) => (
+      {movieDetailsData &&
+        movieDetailsData.map((video) => (
           <Video
             key={video.id}
             video={video}
-            deleteVideo={deleteVideo}
-            updatedVideo={updatedVideo}
+            // deleteVideo={deleteVideo}
+            // updatedVideo={updatedVideo}
           />
         ))}
     </div>

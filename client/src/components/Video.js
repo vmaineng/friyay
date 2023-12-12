@@ -17,13 +17,6 @@ import {
 
 export const Video = ( {video} ) => {
 
-
-
-  // const images = [
-  //   "https://www.youtube.com/embed/QhBnZ6NPOY0",
-  //   "https://www.youtube.com/embed/QhBnZ6NPOY0",
-  // ];
-
   return (
     <div>
       <Container maxW={"md"} py={16} as={Stack} spacing={12}>
@@ -38,8 +31,7 @@ export const Video = ( {video} ) => {
           <Card>
             {/* Heading for the title */}
             <Heading as={"h3"} fontSize={"xl"}>
-              Naruto 
-              {video.original_title}
+              {video.title}
             </Heading>
             {/* Description */}
             <Text
