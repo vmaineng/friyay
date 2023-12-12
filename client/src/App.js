@@ -1,13 +1,13 @@
 import './App.css';
 import { Navbar } from './layouts/Navbar';
-import { Video } from './components/Video';
+import { Videos } from './pages/Videos';
 import { Footer }from './layouts/Footer';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-  <Video />
+  <Videos />
   <Footer />
     </div>
   );

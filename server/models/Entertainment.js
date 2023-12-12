@@ -23,10 +23,7 @@ const entertainmentSchema = new Schema({
             "International"
         ]
     },
-    // completed: {
-    //     type: Boolean,
-    //     required: true
-    // }
+    
 }, {timestamps: true})
 
 module.exports = mongoose.model('Entertainment', entertainmentSchema)
