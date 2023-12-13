@@ -6,6 +6,7 @@ import {
   Container,
   Heading,
   Text,
+  Image,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -39,7 +40,7 @@ export const Video = ( {video} ) => {
               color={useColorModeValue("gray.600", "gray.400")}
               fontSize={"sm"}
             >
-              Anime
+              {video.overview}
             </Text>
           </Card>
 
@@ -52,15 +53,17 @@ export const Video = ( {video} ) => {
               />
             </AspectRatio>
           </Card> */}
+ <Image src={`https://image.tmdb.org/t/p/w300/${video.poster_path}`} />
 
           <Card maxW='sm'> 
+{/*          
             <AspectRatio maxW="560px" ratio={4/3}>
               <iframe
                 title="naruto"
                 src="https://www.youtube.com/embed/QhBnZ6NPOY0"
                 allowFullScreen
               />
-            </AspectRatio>
+            </AspectRatio> */}
             
           </Card>
         </Stack>
