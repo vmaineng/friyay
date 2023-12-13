@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Video } from "../components/Video";
-
-
+import { Heading, Text, Stack } from "@chakra-ui/react";
 
 export const Videos = () => {
   const [movieDetailsData, setMovieDetails] = useState(null);
@@ -13,20 +12,21 @@ export const Videos = () => {
 
   async function fetchMovieDetails(type) {
     try {
-    
-    //  const apiKeyString = apiKey.toString();
-      const response = await fetch(`https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`);
+      
+      //  const apiKeyString = apiKey.toString();
+      const response = await fetch(
+        `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
+
       const movieDetailsData = await response.json();
       const results = movieDetailsData.results;
-  
-      console.log('Results:', results);
-      setMovieDetails(results)
 
+      console.log("Results:", results);
+      setMovieDetails(results);
     } catch (error) {
       console.error("Error", error);
       setError("Error fetching movie details");
@@ -47,6 +47,10 @@ export const Videos = () => {
 
   return (
     <div>
+      <Stack mt='5' mb='5' spacing={0} align={"center"}>
+        <Heading>Trending Movies</Heading>
+        <Text>Watch the latest on demand right now</Text>
+      </Stack>
       {error && <p>{error}</p>}
       {movieDetailsData &&
         movieDetailsData.map((video) => (
