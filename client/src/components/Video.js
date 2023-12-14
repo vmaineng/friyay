@@ -20,12 +20,9 @@ import { ViewIcon } from "@chakra-ui/icons";
 export const Video = ({ video }) => {
   return (
     <div>
-      <Container maxW={"md"} py={3} overflow="scroll" >
-        <Stack
-          direction={{ base: "row" }}
-          spacing={{ base: 10, md: 4, lg: 10 }}
-        >
-          <Box>
+      <Container maxW={"lg"} py={3} >
+      
+          
             {/* Heading for the title */}
             <Box>
               <Card>
@@ -64,8 +61,7 @@ export const Video = ({ video }) => {
                 </CardFooter>
               </Card>
             </Box>
-          </Box>
-        </Stack>
+         
       </Container>
     </div>
   );

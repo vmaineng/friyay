@@ -52,7 +52,7 @@ export const Videos = () => {
         <Text>Watch the latest on demand right now</Text>
       </Stack>
       {error && <p>{error}</p>}
-      <Flex minWidth='max-content' alignItems='center' gap='2' > 
+      <Flex minWidth='max-content' alignItems='center' gap='2'  overflowX="hidden"> 
       {movieDetailsData &&
         movieDetailsData.map((video) => (
           <Video
