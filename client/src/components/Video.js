@@ -1,9 +1,9 @@
 import {
-  AspectRatio,
   Box,
   Card,
   Button,
   CardHeader,
+  CardFooter,
   Container,
   Heading,
   Text,
@@ -11,20 +11,16 @@ import {
   HStack,
   Tag,
   Stack,
-  VStack,
   useColorModeValue,
   CardBody,
 } from "@chakra-ui/react";
-// import {
-//   Carousel,
-//   CarouselItem,
-//   CarouselItems,
-// } from "chakra-framer-carousel";
+import { ViewIcon } from "@chakra-ui/icons";
+
 
 export const Video = ({ video }) => {
   return (
     <div>
-      <Container maxW={"md"} py={3} as={Stack} spacing={20}>
+      <Container maxW={"md"} py={3} overflow="scroll" >
         <Stack
           direction={{ base: "row" }}
           spacing={{ base: 10, md: 4, lg: 10 }}
@@ -61,13 +57,16 @@ export const Video = ({ video }) => {
                     {video.overview}
                   </Text>
                 </CardBody>
-                <Button colorScheme="blue">Watch Now</Button>
+                <CardFooter>
+                  <HStack align="center" justify="center">
+                <Button leftIcon={<ViewIcon />} colorScheme="blue">Watch Now</Button>
+                </HStack>
+                </CardFooter>
               </Card>
             </Box>
           </Box>
         </Stack>
       </Container>
-      {/* </Flex> */}
     </div>
   );
 };
