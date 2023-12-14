@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Video } from "../components/Video";
-import { Heading, Text, Stack } from "@chakra-ui/react";
+import { Heading, Text, Stack, Flex } from "@chakra-ui/react";
 
 export const Videos = () => {
   const [movieDetailsData, setMovieDetails] = useState(null);
@@ -52,6 +52,7 @@ export const Videos = () => {
         <Text>Watch the latest on demand right now</Text>
       </Stack>
       {error && <p>{error}</p>}
+      <Flex minWidth='max-content' alignItems='center' gap='2'> 
       {movieDetailsData &&
         movieDetailsData.map((video) => (
           <Video
@@ -61,6 +62,7 @@ export const Videos = () => {
             // updatedVideo={updatedVideo}
           />
         ))}
+        </Flex>
     </div>
   );
 };
