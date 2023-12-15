@@ -25,7 +25,7 @@ export const Video = ({ video }) => {
 
   return (
     <div>
-      <Container maxW={"lg"} py={3}>
+      <Container maxW={"lg"} py={3} borderWidth='1px'>
         {/* Heading for the title */}
         <Box>
           <Card>
