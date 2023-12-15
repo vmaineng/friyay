@@ -3,7 +3,7 @@ import { SignupForm } from '../components/SignupForm'
 
 export const Signup = () => {
   return (
-    <div>Signup
+    <div>
         <SignupForm />
     </div>
   )

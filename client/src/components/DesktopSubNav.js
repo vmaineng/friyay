@@ -41,7 +41,7 @@ export const DesktopSubNav = ({ label, href, subLabel }) => {
             align={"center"}
             flex={1}
           >
-            <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={"blue.400"} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Box>

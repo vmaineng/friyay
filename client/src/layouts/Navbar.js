@@ -100,7 +100,7 @@ export const Navbar = () => {
                     <Box
                       as="a"
                       p={2}
-                      href={navItem.href ?? "#"}
+                      href={navItem.href ?? "/"}
                       fontSize={"sm"}
                       fontWeight={500}
                       color={linkColor}
@@ -164,7 +164,7 @@ export const Navbar = () => {
                 bg: "pink.300",
               }}
             >
-              <Link to="/login">Sign Up</Link>
+              <Link to="/signup">Sign Up</Link>
             </Button>
           </Stack>
         </Flex>
