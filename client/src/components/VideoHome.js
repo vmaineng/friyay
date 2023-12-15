@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Card,
@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
 
-export const Video = ({ video }) => {
+export const VideoHome = ({ video }) => {
   const [show, setShow] = useState(false);
 
   const handleToggle = () => setShow(!show);

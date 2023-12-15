@@ -32,18 +32,7 @@ export const Navbar = () => {
   const NAV_ITEMS = [
     {
       label: "Home",
-      children: [
-        {
-          label: "TV Genres",
-          subLabel: "Find a genre you'd like",
-          href: "#",
-        },
-        {
-          label: "Movie",
-          subLabel: "Up-and-coming",
-          href: "#",
-        },
-      ],
+     
     },
     {
       label: "New & Popular",
