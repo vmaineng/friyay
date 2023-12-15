@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Video } from "../components/Video";
-import { Heading, Text, Stack, Flex } from "@chakra-ui/react";
+import { Heading, Text, Stack, Flex, Box } from "@chakra-ui/react";
 
 export const Videos = () => {
   const [movieDetailsData, setMovieDetails] = useState(null);
@@ -12,7 +12,7 @@ export const Videos = () => {
 
   async function fetchMovieDetails(type) {
     try {
-      
+   
       //  const apiKeyString = apiKey.toString();
       const response = await fetch(
         `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
@@ -52,7 +52,7 @@ export const Videos = () => {
         <Text>Watch the latest on demand right now</Text>
       </Stack>
       {error && <p>{error}</p>}
-      <Flex minWidth='max-content' alignItems='center' gap='2'  overflowX="hidden"> 
+      <Box alignItems='center' gap='2' display={{ md: "flex" }} > 
       {movieDetailsData &&
         movieDetailsData.map((video) => (
           <Video
@@ -62,7 +62,7 @@ export const Videos = () => {
             updatedVideo={updatedVideo}
           />
         ))}
-        </Flex>
+        </Box>
     </div>
   );
 };
