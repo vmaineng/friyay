@@ -14,6 +14,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { DesktopSubNav } from "../components/DesktopSubNav";
 import {
   HamburgerIcon,
@@ -32,7 +33,6 @@ export const Navbar = () => {
   const NAV_ITEMS = [
     {
       label: "Home",
-     
     },
     {
       label: "New & Popular",
@@ -150,14 +150,8 @@ export const Navbar = () => {
             direction={"row"}
             spacing={6}
           >
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-            >
-              Sign In
+            <Button as={"a"} fontSize={"sm"} fontWeight={400} variant={"link"}>
+              <Link to="/login">Log In</Link>
             </Button>
             <Button
               as={"a"}
@@ -166,12 +160,11 @@ export const Navbar = () => {
               fontWeight={600}
               color={"white"}
               bg={"pink.400"}
-              href={"#"}
               _hover={{
                 bg: "pink.300",
               }}
             >
-              Sign Up
+              <Link to="/login">Sign Up</Link>
             </Button>
           </Stack>
         </Flex>
