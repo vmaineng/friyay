@@ -12,7 +12,7 @@ export const Home = () => {
 
   async function fetchMovieDetails(type) {
     try {
-      const apiKey = "918992ef6f0881ce99691d25e55dcc00";
+   
       //  const apiKeyString = apiKey.toString();
       const response = await fetch(
         `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
