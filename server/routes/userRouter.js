@@ -4,7 +4,7 @@ const {
     createUser,
     updateOneUser,
     deleteOneUser
-} = require("../controllers/users");
+} = require("../controllers/userController");
 
 userRouter.route("/login").post(getUser);
 

@@ -6,7 +6,7 @@ const express = require("express");
 
 //routes
 const entertainmentRoutes = require("./routes/entertainmentRouter");
-const userRoutes = require("./routes/users");
+const userRoutes = require("./routes/userRouter");
 
 //start the server
 const app = express();
