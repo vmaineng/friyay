@@ -1,11 +1,12 @@
-require("dotenv").config(({ path: "./config/config.env"}));
+require("dotenv").config({ path: "./config/config.env" });
 
 // const { application } = require('express');
 const mongoose = require("mongoose");
 const express = require("express");
 
 //routes
-
+const entertainmentRoutes = require("./routes/entertainmentRouter");
+const userRoutes = require("./routes/users");
 
 //start the server
 const app = express();
@@ -19,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 //setting up routes to habits and users
-app.use("/api/habits", habitRoutes);
+app.use("/api/entertainment", entertainmentRoutes);
 app.use("/api/users", userRoutes);
 
 // connect to DB && async

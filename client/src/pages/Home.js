@@ -12,11 +12,7 @@ export const Home = () => {
 
   async function fetchMovieDetails(type) {
     try {
-   
-      //  const apiKeyString = apiKey.toString();
-      const response = await fetch(
-        `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
-      );
+      const response = await fetch("/api/trending");
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -32,6 +28,29 @@ export const Home = () => {
       setError("Error fetching movie details");
     }
   }
+
+  // async function fetchMovieDetails(type) {
+  //   try {
+  //   
+  //     //  const apiKeyString = apiKey.toString();
+  //     const response = await fetch(
+  //       `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
+  //     );
+
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+
+  //     const movieDetailsData = await response.json();
+  //     const results = movieDetailsData.results;
+
+  //     console.log("Results:", results);
+  //     setMovieDetails(results);
+  //   } catch (error) {
+  //     console.error("Error", error);
+  //     setError("Error fetching movie details");
+  //   }
+  // }
 
   return (
     <div>

@@ -4,7 +4,7 @@ const { getMovie } = require("../controllers/entertainmentController");
 
 const router = express.Router();
 
-// router.get("/", getEntertainments);
+router.get("/", getEntertainments);
 
 router.get("/:id", getMovie);
 
