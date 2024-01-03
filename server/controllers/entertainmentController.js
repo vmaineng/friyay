@@ -10,7 +10,8 @@ const searchUrl = baseUrl + '/search/movie?' + apiKey;
 const getMovie = async (req, res, next) => {
     try {
        //passing in url, then fetch to /api/getMovie from clientside?
-        const url = `${baseUrl}/trending/${type}/day?api_key=${apiKey}&media_type=movie`;
+        const url = `${baseUrl}/trending/all/day?api_key=${apiKey}`;
+        //https://api.themoviedb.org/3/trending/all/day?
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`)
