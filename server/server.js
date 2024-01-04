@@ -11,7 +11,8 @@ const userRoutes = require("./routes/userRouter");
 //start the server
 const app = express();
 
-//global middleware to access request
+//global middleware to access(parse) request
+//app.use = is calling express method; and is referring to middleware
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -35,4 +36,5 @@ mongoose
   })
   .catch((error) => {
     console.log(error);
-  });
+  }); 
+//it's a promise and can catch an error
