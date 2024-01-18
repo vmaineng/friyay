@@ -26,13 +26,12 @@ const getMovie = async (req, res, next) => {
 }
 
 module.exports = {
-    getMovie,
+    getMovie
 };
 
 // async function fetchMovieDetails(type) {
 //     try {
 //      
-//       //  const apiKeyString = apiKey.toString();
 //       const response = await fetch(
 //         `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
 //       );

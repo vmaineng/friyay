@@ -44,7 +44,7 @@ const updateOneUser = async (req, res, next) => {
   const deleteOneUser = async (req, res, next) => {
     try {
       await User.findByIdAndDelete(req.params.userId);
-      res.status(200).setHeader("Content-Tyoe", "application/json").json();
+      res.status(200).setHeader("Content-Type", "application/json").json();
     } catch {
       res.status(404).send(`Can't delete user data, ${err.message}`);
       next(err);

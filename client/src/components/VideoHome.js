@@ -15,12 +15,32 @@ import {
   Stack,
   useColorModeValue,
   CardBody,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
+// import { useHistory } from 'react-router-dom'; // ! have to figure out why this doesn't work
 import { ViewIcon } from "@chakra-ui/icons";
 
-export const VideoHome = ({ video }) => {
-  const [show, setShow] = useState(false);
 
+export const VideoHome = ({ video }) => {
+  const history = useHistory();
+  const [show, setShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onWatchNowClick = () => {
+    setIsOpen(true)
+  };
+
+  const handleLogIin = () => {
+    history.push('/login');
+    setIsOpen(false);
+  }
+  
   const handleToggle = () => setShow(!show);
 
   return (
@@ -64,9 +84,25 @@ export const VideoHome = ({ video }) => {
             </CardBody>
             <CardFooter>
               <HStack align="center" justify="center">
-                <Button leftIcon={<ViewIcon />} colorScheme="blue">
+                <Button leftIcon={<ViewIcon />} colorScheme="blue" onClick={onWatchNowClick}>
                   Watch Now
                 </Button>
+
+                <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Confirmation</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            Are you a user already? If so, please log in
+            {/* Add more content or customization as needed */}
+          </ModalBody>
+          <ModalFooter>
+            <button onClick={() => setIsOpen(false)}>Cancel</button>
+            <button onClick={handleLogIin}>Log in</button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
               </HStack>
             </CardFooter>
           </Card>

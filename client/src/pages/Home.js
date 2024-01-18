@@ -3,54 +3,54 @@ import { VideoHome } from "../components/VideoHome";
 import { Heading, Text, Stack, Flex, Box} from "@chakra-ui/react";
 
 export const Home = () => {
-  const [movieDetailsData, setMovieDetails] = useState(null);
+  const [movieDetailsData, setMovieDetails] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchMovieDetails("movie");
+    fetchMovieDetails();
   }, []);
 
-  async function fetchMovieDetails(type) {
-    try {
-      const response = await fetch("/api/trending");
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const movieDetailsData = await response.json();
-      const results = movieDetailsData.results;
-
-      console.log("Results:", results);
-      setMovieDetails(results);
-    } catch (error) {
-      console.error("Error", error);
-      setError("Error fetching movie details");
-    }
-  }
-
-  // async function fetchMovieDetails(type) {
+  // async function fetchMovieDetails() {
   //   try {
-  //   
-  //     //  const apiKeyString = apiKey.toString();
-  //     const response = await fetch(
-  //       `https://api.themoviedb.org/3/trending/${type}/day?api_key=${apiKey}&media_type=movie`
-  //     );
-
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
+  //     const response = await fetch("/api/entertainment");
 
   //     const movieDetailsData = await response.json();
-  //     const results = movieDetailsData.results;
+  //     if (response.ok) {
+  //       setMovieDetails(movieDetailsData)
+  //     }
+  //     // const results = movieDetailsData.results;
 
-  //     console.log("Results:", results);
-  //     setMovieDetails(results);
+  //     // console.log("Results:", results);
+  //     // setMovieDetails(results);
   //   } catch (error) {
   //     console.error("Error", error);
   //     setError("Error fetching movie details");
   //   }
   // }
+
+//   async function fetchMovieDetails(type) {
+//     try {
+     
+
+//  //  const apiKeyString = apiKey.toString();
+//       const response = await fetch(
+       
+//       );
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! Status: ${response.status}`);
+//       }
+
+//       const movieDetailsData = await response.json();
+//       const results = movieDetailsData.results;
+
+//       console.log("Results:", results);
+//       setMovieDetails(results);
+//     } catch (error) {
+//       console.error("Error", error);
+//       setError("Error fetching movie details");
+//     }
+//   }
 
   return (
     <div>
