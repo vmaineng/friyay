@@ -3,30 +3,32 @@ import { VideoHome } from "../components/VideoHome";
 import { Heading, Text, Stack, Flex, Box} from "@chakra-ui/react";
 
 export const Home = () => {
-  const [movieDetailsData, setMovieDetails] = useState([]);
+  const [movieDetailsData, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchMovieDetails();
+    fetchMovieDetails("movie");
   }, []);
 
-  // async function fetchMovieDetails() {
-  //   try {
-  //     const response = await fetch("/api/entertainment");
+  async function fetchMovieDetails(type) {
+    try {
+      const response = await fetch(`/api/entertainment/${type}`);
 
-  //     const movieDetailsData = await response.json();
-  //     if (response.ok) {
-  //       setMovieDetails(movieDetailsData)
-  //     }
-  //     // const results = movieDetailsData.results;
+      const movieDetailsData = await response.json();
+      console.log("movie data", movieDetailsData)
 
-  //     // console.log("Results:", results);
-  //     // setMovieDetails(results);
-  //   } catch (error) {
-  //     console.error("Error", error);
-  //     setError("Error fetching movie details");
-  //   }
-  // }
+      if (response.ok) {
+        setMovieDetails(movieDetailsData)
+      }
+      // const results = movieDetailsData.results;
+
+      // console.log("Results:", results);
+      // setMovieDetails(results);
+    } catch (error) {
+      console.error("Error", error);
+      setError("Error fetching movie details");
+    }
+  }
 
 //   async function fetchMovieDetails(type) {
 //     try {
